@@ -11,11 +11,14 @@ def chat_with_ai(messages, model="gpt-3.5-turbo"):
     Query the OpenRouter (ChatGPT-compatible) API.
     messages = [{"role": "system", "content": "..."}, {"role": "user", "content": "..."}]
     """
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "HTTP-Referer": "https://svnapro-ai-interviewer.streamlit.app/",
-        "X-Title": "AI Interviewer"
-    }
+    import streamlit as st
+
+headers = {
+    "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+    "HTTP-Referer": st.secrets.get("APP_URL", "https://share.streamlit.io"),
+    "X-Title": "AI Interviewer"
+}
+
 
     payload = {
         "model": model,

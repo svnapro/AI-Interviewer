@@ -13,7 +13,7 @@ def chat_with_ai(messages, model="gpt-3.5-turbo"):
     """
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "HTTP-Referer": "https://yourapp.com",
+        "HTTP-Referer": "https://svnapro-ai-interviewer.streamlit.app/",
         "X-Title": "AI Interviewer"
     }
 
